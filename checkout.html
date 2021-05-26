@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check out</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="subtotal()">
+    <header>
+        <div class='navbar'>
+            <div class="logo">
+                <span>Tranquilo</span>
+            </div>
+            <nav class="menu">
+                <a href="index1.html">Home</a> <a href="#">Cart<span class="cartAmount">0</span></a> <a href="#">Check
+                    Out</a>
+            </nav>
+        </div>
+    </header>
+
+    <div>
+        <h2>SUMMARY:</h2>
+    </div>
+
+
+    <hr>
+
+    <div class='products'>
+        <div class="finalCheckOut">
+
+        </div>
+    </div>
+    <br>
+    <hr>
+    <h3>Subtotal $<span class='totals' id='subtotal'>0</span></h3>
+    <h3>Total incl VAT $<span class='totals' id='vatTotal'>0</span></h3>
+    <br>
+    <form>
+        <label for="discount">Please enter discount coupon:</label>
+        <input class="discInput" type="text" id="discount" name="discount">
+
+        <button onclick='coupon()' type="button">Apply</button>
+        <br>
+        <p id="couponNumber"></p>
+        <br>
+
+        <p>How would you like to receive your order?</p>
+        <div class='collect'>
+            <input type="radio" id="collection" name="collectOpt" value="collection"
+                onclick='locationsOpts(), buttonLocations()'>
+            <label for="collection">Collection</label></div>
+
+        <div class="deliv">
+            <input type="radio" id="delivery" name="collectOpted" value="delivery" onclick='deliveries()'>
+            <label for="delivery">Delivery</label><br>
+        </div>
+        <div class="pickupOpt">
+            <p class='instructions'></p>
+            <select id='options'></select>
+        </div>
+        <div id="buttonPlace"></div>
+
+        <div class="deliveryOpt" id="deliveryOpts">
+            <p>PLEASE ENTER YOUR DELIVERY ADDRESS:</p>
+            <label for="street">Please enter your street name and number:</label>
+            <input type="text" id="street" name="street"> <br>
+            <label for="street">Please enter your suburb and city:</label>
+            <input type="text" id="suburb" name="suburb"> <br>
+            <button onclick='totalDelivery()' type="button">Click to confirm address</button>
+        </div>
+
+    </form>
+
+    <h2>YOUR FINAL TOTAL: $<span id='finalTotal'>0</span></h2>
+
+    <button onclick='refNumbers()' id='orderConf' class="cartBtn" type="button">Confirm Order</button>
+    <p id='refNum'></p>
+    <script src="task15.js" type="text/javascript"></script>
+</body>
+
+</html>
